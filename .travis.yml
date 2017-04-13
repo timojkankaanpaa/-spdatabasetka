@@ -1,0 +1,18 @@
+language: java
+jdk:
+ - oraclejdk8
+services:
+  - mysql
+sudo: required
+
+before_script:
+  - sudo /etc/init.d/mysql stop
+  - sudo /etc/init.d/mysql start
+    
+before_install:
+  - sudo mysql -e 'CREATE DATABASE tka_2017b;'
+deploy:
+ provider: heroku
+ api-key: 
+  secure: $HEROKU_API_KEY
+ app: spexample

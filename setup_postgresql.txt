@@ -1,0 +1,11 @@
+https://www.petrikainulainen.net/programming/tips-and-tricks/installing-postgresql-9-1-to-windows-7-from-the-binary-zip-distribution/
+Download: https://www.enterprisedb.com/download-postgresql-binaries
+initdb -U postgres -A password -E utf8 -W -D POSTGRESQL_ROOT\data
+Start server: "pg_ctl" -D "/pgsql/data" -l logfile start
+psql.exe -U postgres
+Create database: CREATE DATABASE tka_2017b OWNER postgres;
+Connect database: \connect tka_2017b
+Check where you are:  SELECT current_database();
+List tables: \dt
+Quit: \q
+run http://localhost/project to add project to database by JSON like {"name":"myProject"}
