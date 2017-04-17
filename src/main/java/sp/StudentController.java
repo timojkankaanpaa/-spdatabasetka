@@ -30,7 +30,7 @@ public class StudentController {
     } 
     
     
-    @RequestMapping(value = "/student", method = RequestMethod.GET)
+    @RequestMapping(value = "/student", method = RequestMethod.GET, produces={"application/json","application/xml"})
     public Student get(@RequestParam(value="id", defaultValue="1") int id){
     	return repository.findOne(id);
     }    
