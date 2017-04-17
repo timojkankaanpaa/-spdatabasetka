@@ -31,7 +31,7 @@ public class ProjectController {
     } 
     
     
-    @RequestMapping(value = "/project", method = RequestMethod.GET)
+    @RequestMapping(value = "/project", method = RequestMethod.GET,produces={"application/json","application/xml"})
     public Project get(@RequestParam(value="id", defaultValue="1") int id){
     	return repository.findOne(id);
     }
